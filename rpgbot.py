@@ -22,7 +22,7 @@ with shelve.open('rpgbotDB') as db:
 			msg.continue_propagation() 
 		return wrapper
 
-	@app.on_message(~Filters.channel)
+	@app.on_message(~Filters.channel, Filters.command('game'))
 	@db_decorator
-	def start_battle(app, msg, world):
+	def open_game(app, msg, world):
 		start(app, msg, world)

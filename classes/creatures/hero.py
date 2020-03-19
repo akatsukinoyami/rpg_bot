@@ -1,5 +1,5 @@
-from classes.creature   import Somebody
-from lists.items        import Items
+from classes.creatures.parent     import Somebody
+from lists.items                  import Items
 import random
 
 class Hero(Somebody):

@@ -1,4 +1,4 @@
-from classes.hero import Hero
+from classes.creatures.hero import Hero
 
 class World:
     def __init__(self, username):

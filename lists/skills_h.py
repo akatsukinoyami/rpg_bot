@@ -1,6 +1,6 @@
 from classes.item     import Item
 
-class Skills:
+class SkillsH:
     def __init__(self):
         self.kick   = Item('skill', 'kick', 'Удар ногой', 'Отмашистый удар ногой', 
                             attack=5, cost=10)

@@ -2,14 +2,12 @@ from pyrogram			import InlineKeyboardMarkup, InlineKeyboardButton
 from words.service      import s
 from funcs.keyboard     import draw_kb
 from classes.battle     import Battle
-from classes.creature   import Somebody
+from lists.enemies      import Enemies
 
 def first_step(app, msg, world):
-    enemy = Somebody(   'Жаба', health  = 20, attack  = 1,
-                                stamina = 20, def_pass= 1, def_act = 10,
-                                mana    = 20, agility = 1, mode    = 'normal')
-    
-    world.battle = Battle(enemy)
+
+    enemies         = Enemies()
+    world.battle    = Battle(enemies.zhaba)
 
     txt = f'{s["start_battle"]}, {s["your_enemy"]} - {world.battle.enemy.name}\n'
     txt+= f'{world.battle.enemy.list_characteristics()}\n'

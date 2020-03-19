@@ -1,7 +1,7 @@
-from pyrogram 		import Client, Filters
+from pyrogram 			import Client, Filters
 import shelve
-from classes.world	import World
-from battles.zhaba	import first_step
+from classes.world		import World
+from battles.start_msg	import first_step
 
 with shelve.open('rpgbotDB') as db:
 	app = Client("rpgbot")
@@ -24,5 +24,5 @@ with shelve.open('rpgbotDB') as db:
 
 	@app.on_message(~Filters.channel)
 	@db_decorator
-	def first_battle(app, msg, world):
-		first_step(app, msg, world)
+	def start_battle(app, msg, world):
+		start(app, msg, world)
